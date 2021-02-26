@@ -86,7 +86,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
- #define SHOW_BOOTSCREEN
+#define SHOW_BOOTSCREEN
   
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN
@@ -729,7 +729,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 73 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -953,7 +953,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 34, 0 ,-2.6 }
+#define NOZZLE_TO_PROBE_OFFSET { 34, 0 ,-2.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1089,15 +1089,15 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 250
-#define Y_BED_SIZE 226 
+#define X_BED_SIZE 247
+#define Y_BED_SIZE 215 
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS  10
-#define Y_MIN_POS  -8
+#define X_MIN_POS 0
+#define Y_MIN_POS -3
 #define Z_MIN_POS 0
-#define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
-#define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
+#define X_MAX_POS 249
+#define Y_MAX_POS 217
 #define Z_MAX_POS 200
 
 /**
@@ -1257,7 +1257,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 5
+  #define GRID_MAX_POINTS_X 8
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1267,7 +1267,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
